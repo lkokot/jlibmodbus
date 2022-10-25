@@ -6,6 +6,8 @@ import com.intelligt.modbus.jlibmodbus.master.ModbusMasterFactory;
 import com.intelligt.modbus.jlibmodbus.exception.ModbusIOException;
 import com.intelligt.modbus.jlibmodbus.serial.SerialParameters;
 import com.intelligt.modbus.jlibmodbus.serial.SerialPort;
+import com.intelligt.modbus.jlibmodbus.serial.SerialPortFactoryJSerialComm;
+import com.intelligt.modbus.jlibmodbus.serial.SerialUtils;
 import jssc.SerialPortList;
 
 /*
@@ -72,6 +74,9 @@ public class SimpleMasterRTU {
                 //int port  = 777;
                 //SerialUtils.setSerialPortFactory(new SerialPortFactoryTcp(new TcpParameters(InetAddress.getByName(ip), port, true)));
                 // you should use another method:
+    
+                SerialUtils.setSerialPortFactory(new SerialPortFactoryJSerialComm());
+                
                 //next you just create your master and use it.
                 ModbusMaster m = ModbusMasterFactory.createModbusMasterRTU(sp);
                 m.connect();

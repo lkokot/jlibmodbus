@@ -1,0 +1,7 @@
+Fork from https://github.com/kochedykov/jlibmodbus
+
+Changes:
+
+* gradle
+* jdk 17
+* only supports https://github.com/Fazecast/jSerialComm
